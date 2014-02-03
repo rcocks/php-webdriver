@@ -20,6 +20,7 @@ class PHPWebDriver_WebDriverWait {
       $this->session = $session;
       $this->timeout = $timeout;
       $this->poll = $poll_frequency;
+      $this->message = $message;
       $this->extra_arguments = $extra_arguments;
       return $this;
     }
