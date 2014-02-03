@@ -16,7 +16,7 @@
 include_once('WebDriverExceptions.php');
 
 class PHPWebDriver_WebDriverWait {
-    public function __construct($session, $timeout = 30, $poll_frequency = 0.5, $extra_arguments = array()) {
+    public function __construct($session, $timeout = 30, $poll_frequency = 0.5, $message='Element wait timed out after %s',$extra_arguments = array()) {
       $this->session = $session;
       $this->timeout = $timeout;
       $this->poll = $poll_frequency;
@@ -39,7 +39,7 @@ class PHPWebDriver_WebDriverWait {
         }
         throw new PHPWebDriver_TimeOutWebDriverError(
           sprintf(
-            'Element wait timed out after %s',
+            $this->message,
             $this->timeout) . "\n\n");
     }
 }
